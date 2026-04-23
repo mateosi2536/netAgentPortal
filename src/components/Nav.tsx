@@ -1,0 +1,79 @@
+import { useEffect, useState } from 'react'
+
+const links = [
+  { href: '#demo', label: 'Demo' },
+  { href: '#pipeline', label: 'Pipeline' },
+  { href: '#features', label: 'Features' },
+  { href: '#stack', label: 'Stack' },
+  { href: '#pricing', label: 'Precio' },
+  { href: '#faq', label: 'FAQ' },
+]
+
+export default function Nav() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-bg/85 backdrop-blur-md border-b border-border-soft'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="container-pg flex h-14 items-center justify-between">
+        <a href="#" className="group flex items-center gap-2.5">
+          <LogoMark />
+          <span className="font-mono text-[13px] tracking-mid text-ink">
+            pleno<span className="text-phosphor">.</span>agent
+          </span>
+        </a>
+
+        <nav className="hidden lg:flex items-center gap-1">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="group relative px-3 py-1.5 font-mono text-[12px] tracking-mid text-ink-dim hover:text-ink transition-colors"
+            >
+              <span className="text-phosphor opacity-0 group-hover:opacity-100 transition-opacity">
+                ›{' '}
+              </span>
+              {l.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <a
+            href="#pricing"
+            className="hidden sm:inline-flex items-center gap-2 bg-phosphor text-bg font-mono text-[12px] uppercase tracking-mid px-4 py-2 hover:bg-phosphor-glow transition-colors"
+          >
+            Comprar
+            <span className="text-bg/70">→</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+function LogoMark() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 32 32" className="shrink-0">
+      <rect x="0.5" y="0.5" width="31" height="31" rx="4" fill="none" stroke="#2b3142" />
+      <path
+        d="M7 11h3.2l2 4 2-8 2 12 2-6h6.8"
+        fill="none"
+        stroke="#9fef00"
+        strokeWidth="1.6"
+      />
+    </svg>
+  )
+}
