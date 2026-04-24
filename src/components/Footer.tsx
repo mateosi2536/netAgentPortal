@@ -44,19 +44,11 @@ export default function Footer() {
             </FLink>
           </Col>
           <Col title="Legal">
-            <span className="text-ink-faint text-[11.5px] leading-relaxed">
-              Procesado por{' '}
-              <a
-                href="https://lemonsqueezy.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-ink-dim hover:text-phosphor"
-              >
-                Lemon Squeezy
-              </a>
-              , Merchant of Record.
-              <br />
-              Términos, privacidad y reembolsos gestionados en el checkout.
+            <FLink href="/terms.html">Términos de Servicio</FLink>
+            <FLink href="/privacy.html">Política de Privacidad</FLink>
+            <FLink href="/terms.html">Reembolsos</FLink>
+            <span className="text-ink-faint text-[10.5px] leading-relaxed mt-2 opacity-70">
+              Pagos procesados por Lemon Squeezy.
             </span>
           </Col>
         </div>
