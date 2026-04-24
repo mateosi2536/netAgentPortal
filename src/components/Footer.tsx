@@ -37,16 +37,27 @@ export default function Footer() {
             <FLink href="#pricing">Precio</FLink>
             <FLink href="#faq">FAQ</FLink>
           </Col>
-          <Col title="Recursos">
-            <FLink href="#">Documentación</FLink>
-            <FLink href="#">Changelog</FLink>
-            <FLink href="#">Scripts incluidos</FLink>
+          <Col title="Contacto">
+            <FLink href="mailto:support@plenoagent.com">support@plenoagent.com</FLink>
+            <FLink href="https://netagent.lemonsqueezy.com/checkout/buy/c481173d-d97a-4083-ba7e-4b844351d506">
+              Comprar licencia
+            </FLink>
           </Col>
           <Col title="Legal">
-            <FLink href="#">Términos</FLink>
-            <FLink href="#">Privacidad</FLink>
-            <FLink href="#">Licencia</FLink>
-            <FLink href="#">Reembolsos</FLink>
+            <span className="text-ink-faint text-[11.5px] leading-relaxed">
+              Procesado por{' '}
+              <a
+                href="https://lemonsqueezy.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink-dim hover:text-phosphor"
+              >
+                Lemon Squeezy
+              </a>
+              , Merchant of Record.
+              <br />
+              Términos, privacidad y reembolsos gestionados en el checkout.
+            </span>
           </Col>
         </div>
       </div>

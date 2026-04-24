@@ -26,7 +26,7 @@ const faqs: QA[] = [
   },
   {
     q: '¿Se puede cancelar la suscripción?',
-    a: 'Sí, en un click desde el panel de cuenta de Lemon Squeezy. Sin preguntas, sin llamadas de retención. Además tienes 14 días de garantía: si no te convence, reembolso completo sin condiciones.',
+    a: 'Sí, en un click desde el panel de cuenta de Lemon Squeezy. Sin preguntas, sin llamadas de retención. Además tienes 14 días de garantía: si no te convence, solicitas el reembolso y Lemon Squeezy lo procesa como Merchant of Record.',
   },
   {
     q: '¿Por qué el código del agente está ofuscado?',
@@ -38,7 +38,7 @@ const faqs: QA[] = [
   },
   {
     q: '¿Hay soporte técnico?',
-    a: 'Sí. Los canales de soporte oficiales y tiempos de respuesta se publicarán junto con el lanzamiento. Para incidencias críticas de licencia o activación hay atención priorizada desde el primer día.',
+    a: 'Sí. Escribes a support@plenoagent.com y responde una persona del equipo. Para incidencias críticas (activación bloqueada, la app no arranca) tienes atención priorizada desde el primer día.',
   },
 ]
 
@@ -64,9 +64,11 @@ export default function Faq() {
             <div className="mt-10 p-5 border border-border-soft bg-surface/40 font-mono text-[12px] text-ink-dim leading-relaxed">
               <div className="mono-label mb-2">¿NO ESTÁ TU DUDA?</div>
               <p>
-                Los canales de contacto se publicarán junto con el lanzamiento.
-                Mientras tanto, las respuestas más frecuentes están aquí — si
-                falta alguna, será atendida de primero en cuanto abramos soporte.
+                Escribe a{' '}
+                <a href="mailto:support@plenoagent.com" className="text-phosphor hover:underline">
+                  support@plenoagent.com
+                </a>
+                . Responde una persona del equipo.
               </p>
             </div>
           </div>

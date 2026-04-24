@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Logo from './ui/Logo'
 
 const links = [
   { href: '#demo', label: 'Demo' },
@@ -28,9 +29,9 @@ export default function Nav() {
       }`}
     >
       <div className="container-pg flex h-14 items-center justify-between">
-        <a href="#" className="group flex items-center gap-2.5">
-          <LogoMark />
-          <span className="font-mono text-[13px] tracking-mid text-ink">
+        <a href="#" className="group flex items-center gap-2.5 text-ink">
+          <Logo size={22} />
+          <span className="font-mono text-[13px] tracking-mid">
             pleno<span className="text-phosphor">.</span>agent
           </span>
         </a>
@@ -64,16 +65,3 @@ export default function Nav() {
   )
 }
 
-function LogoMark() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 32 32" className="shrink-0">
-      <rect x="0.5" y="0.5" width="31" height="31" rx="4" fill="none" stroke="#2b3142" />
-      <path
-        d="M7 11h3.2l2 4 2-8 2 12 2-6h6.8"
-        fill="none"
-        stroke="#9fef00"
-        strokeWidth="1.6"
-      />
-    </svg>
-  )
-}
