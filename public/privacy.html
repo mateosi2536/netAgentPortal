@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Pleno Agent</title>
+    <style>
+        body { background-color: #0a0b0d; color: #e8eaed; font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.6; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #ffffff; font-size: 2rem; margin-bottom: 10px; }
+        h2 { color: #9fef00; margin-top: 30px; font-size: 1.2rem; }
+        p, li { color: #a1a1aa; font-size: 0.95rem; }
+        a { color: #9fef00; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { margin-bottom: 30px; display: inline-block; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <a href="/" class="back">← Volver a plenoagent.com</a>
+    <h1>Política de Privacidad</h1>
+    <p>Última actualización: Abril 2026</p>
+
+    <h2>1. Procesamiento Local por Diseño</h2>
+    <p>Pleno Agent es una aplicación de escritorio diseñada bajo el principio de privacidad por diseño. <strong>El Software se ejecuta en su propia infraestructura.</strong> Nosotros (Pleno Agent) NO recopilamos, almacenamos ni tenemos acceso a:</p>
+    <ul>
+        <li>Los mensajes de WhatsApp de sus clientes.</li>
+        <li>Las credenciales de acceso a sus equipos (MikroTik, OLT, etc.).</li>
+        <li>Los datos de red o topología de su ISP.</li>
+        <li>Los historiales de conversación generados por la IA.</li>
+    </ul>
+
+    <h2>2. Proveedores de Inteligencia Artificial</h2>
+    <p>El Software envía los datos de las conversaciones y el contexto de red al proveedor de IA que <strong>usted haya configurado</strong> (ej. OpenRouter). Es su responsabilidad revisar las políticas de privacidad del proveedor de IA que elija. Si utiliza modelos locales (ej. Ollama), ningún dato de la conversación sale de su equipo.</p>
+
+    <h2>3. Datos que SÍ Recopilamos</h2>
+    <p>Para poder ofrecerle el servicio y gestionar su licencia, únicamente recopilamos los siguientes datos en nuestros servidores:</p>
+    <ul>
+        <li><strong>Información de Pago y Cuenta:</strong> Procesada por Lemon Squeezy (nuestro Merchant of Record). Incluye su correo electrónico e historial de facturación.</li>
+        <li><strong>Identificador de Hardware (HWID):</strong> Un hash anónimo generado a partir de los componentes físicos de su PC, utilizado <em>exclusivamente</em> para validar que la licencia se use en un solo equipo. No contiene información personal.</li>
+        <li><strong>Estado de la Licencia:</strong> Consultas periódicas para verificar si su suscripción sigue activa.</li>
+    </ul>
+
+    <h2>4. Seguridad</h2>
+    <p>Utilizamos proveedores líderes en la industria (Lemon Squeezy, Supabase) para proteger la información relacionada con su licencia. Dado que los datos de su red nunca tocan nuestros servidores, la seguridad de los mismos depende enteramente de la seguridad de la máquina donde decida instalar Pleno Agent.</p>
+</body>
+</html>
