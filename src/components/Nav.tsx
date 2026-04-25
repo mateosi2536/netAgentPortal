@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Logo from './ui/Logo'
+import { useLatestRelease } from '../hooks/useLatestRelease'
 
 const links = [
   { href: '#demo', label: 'Demo' },
@@ -11,6 +12,7 @@ const links = [
 ]
 
 export default function Nav() {
+  const { downloadUrl } = useLatestRelease()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -52,6 +54,14 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-3">
+          {downloadUrl && (
+            <a
+              href={downloadUrl}
+              className="hidden md:inline-flex font-mono text-[11px] text-ink-dim hover:text-phosphor transition-colors uppercase tracking-mid"
+            >
+              Descargar
+            </a>
+          )}
           <a
             href="#pricing"
             className="hidden sm:inline-flex items-center gap-2 bg-phosphor text-bg font-mono text-[12px] uppercase tracking-mid px-4 py-2 hover:bg-phosphor-glow transition-colors"

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useLatestRelease } from '../hooks/useLatestRelease'
 
 const prompts = [
   '"el nodo central no responde"',
@@ -10,6 +11,7 @@ const prompts = [
 ]
 
 export default function Hero() {
+  const { downloadUrl, version } = useLatestRelease()
   const [idx, setIdx] = useState(0)
   const [typed, setTyped] = useState('')
 
@@ -93,6 +95,15 @@ export default function Hero() {
                 Comprar licencia
                 <span>→</span>
               </a>
+              {downloadUrl && (
+                <a 
+                  href={downloadUrl} 
+                  className="btn-ghost border-phosphor/20 hover:border-phosphor/40"
+                  title={`Download version ${version || ''}`}
+                >
+                  Descargar v{version?.replace('v', '') || '1.1.1'}
+                </a>
+              )}
               <a href="#demo" className="btn-ghost">
                 Ver demo en vivo
               </a>

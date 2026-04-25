@@ -36,6 +36,7 @@ export default function Footer() {
             <FLink href="#stack">Stack</FLink>
             <FLink href="#pricing">Precio</FLink>
             <FLink href="#faq">FAQ</FLink>
+            <FLink href="https://github.com/mateosi2536/PlenoAgentUpdates/releases">Changelog</FLink>
           </Col>
           <Col title="Contacto">
             <FLink href="mailto:support@plenoagent.com">support@plenoagent.com</FLink>
