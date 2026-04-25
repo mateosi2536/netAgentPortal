@@ -39,7 +39,7 @@ export default function Footer() {
           </Col>
           <Col title="Contacto">
             <FLink href="mailto:support@plenoagent.com">support@plenoagent.com</FLink>
-            <FLink href="https://netagent.lemonsqueezy.com/checkout/buy/c481173d-d97a-4083-ba7e-4b844351d506">
+            <FLink href="https://plenoagent.lemonsqueezy.com/checkout/buy/c481173d-d97a-4083-ba7e-4b844351d506">
               Comprar licencia
             </FLink>
           </Col>

@@ -112,7 +112,7 @@ export default function Pricing() {
               {/* CTA */}
               <div className="pt-6 border-t border-border-soft flex flex-wrap items-center gap-4">
                 <a
-                  href="https://netagent.lemonsqueezy.com/checkout/buy/c481173d-d97a-4083-ba7e-4b844351d506"
+                  href="https://plenoagent.lemonsqueezy.com/checkout/buy/c481173d-d97a-4083-ba7e-4b844351d506"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary flex-1 sm:flex-initial justify-center"
