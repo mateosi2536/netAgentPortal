@@ -98,14 +98,14 @@ const terminal: LogLine[] = [
   { tag: 'stdout', text: '3 packets transmitted, 0 received', accent: 'signal' },
   { tag: 'tool', text: 'ssh(10.0.0.4) → /interface monitor-traffic ether2' },
   { tag: 'stdout', text: 'rx 0 bps · tx 0 bps · link down', accent: 'amber' },
-  { tag: 'tool', text: 'python(mikrotik_get_graphs.py --iface ether2)' },
+  { tag: 'tool', text: 'python(ros_graphs.py --iface ether2)' },
   { tag: 'stdout', text: 'saved: core-01-ether2.png', accent: 'phosphor' },
   { tag: 'reply', text: '3 msg + 1 adjunto → whatsapp' },
 
   // Sesión B · OLT
   { tag: 'inbound', text: 'técnico → agent' },
   { tag: 'router', text: 'parse → "y la olt principal?"' },
-  { tag: 'tool', text: 'python(vsol_olt_signal_report.py --host 192.168.10.2)' },
+  { tag: 'tool', text: 'python(olt_signal.py --host 10.1.1.2)' },
   { tag: 'stdout', text: 'scan · 128 onus · 3 bajo umbral -26dBm', accent: 'amber' },
   { tag: 'reply', text: 'resumen → whatsapp' },
 
@@ -118,13 +118,13 @@ const terminal: LogLine[] = [
   { tag: 'stdout', text: '11/12 reachable · 1 down', accent: 'amber' },
   { tag: 'tool', text: 'ssh(×11) → /system resource · parallel' },
   { tag: 'stdout', text: 'NODO-OESTE cpu=87% ← alerta', accent: 'amber' },
-  { tag: 'tool', text: 'write(workspace/data/reports/health_today.md)' },
+  { tag: 'tool', text: 'write(reports/health_today.md)' },
   { tag: 'reply', text: 'tabla + resumen → whatsapp' },
 
   // Sesión D · programar
   { tag: 'inbound', text: 'técnico → agent' },
   { tag: 'router', text: 'parse → "reporte diario 8am"' },
-  { tag: 'tool', text: 'write(.agent/schedules/daily-health.yml)' },
+  { tag: 'tool', text: 'write(schedules/daily-health.yml)' },
   { tag: 'stdout', text: 'cron "0 8 * * *" · registrada', accent: 'phosphor' },
   { tag: 'reply', text: 'confirmación → whatsapp' },
   { tag: 'ok', text: 'próxima ejecución: mañana 08:00', accent: 'phosphor' },
