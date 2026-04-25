@@ -46,7 +46,7 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="relative py-24 md:py-32 border-t border-border-soft">
+    <section id="faq" className="relative py-24 md:py-32 border-t border-border-soft overflow-hidden">
       <div className="container-pg relative">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">

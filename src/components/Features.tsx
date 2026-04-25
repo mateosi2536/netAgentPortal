@@ -55,7 +55,7 @@ const features: Feature[] = [
 
 export default function Features() {
   return (
-    <section id="features" className="relative py-24 md:py-32 border-t border-border-soft bg-surface/20">
+    <section id="features" className="relative py-24 md:py-32 border-t border-border-soft bg-surface/20 overflow-hidden">
       <div className="container-pg relative">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
           <SectionHeader

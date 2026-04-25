@@ -11,7 +11,7 @@ import Grain from './components/ui/Grain'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-bg text-ink">
+    <div className="relative min-h-screen bg-bg text-ink overflow-x-hidden">
       <Grain />
       <Nav />
       <main className="relative">

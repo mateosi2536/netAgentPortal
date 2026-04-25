@@ -20,7 +20,7 @@ const notIncluded = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative py-24 md:py-32 border-t border-border-soft">
+    <section id="pricing" className="relative py-24 md:py-32 border-t border-border-soft overflow-hidden">
       {/* Glow behind card */}
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none"

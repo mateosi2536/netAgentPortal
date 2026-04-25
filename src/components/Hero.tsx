@@ -64,7 +64,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-display text-display-xl text-ink leading-[0.95] tracking-tight text-balance"
+              className="font-display text-display-xl text-ink leading-[0.95] tracking-tight text-balance break-words"
             >
               Tu red responde
               <br />

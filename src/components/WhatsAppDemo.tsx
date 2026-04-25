@@ -132,7 +132,7 @@ const terminal: LogLine[] = [
 
 export default function WhatsAppDemo() {
   return (
-    <section id="demo" className="relative py-24 md:py-32 border-t border-border-soft">
+    <section id="demo" className="relative py-24 md:py-32 border-t border-border-soft overflow-hidden">
       <div
         className="absolute inset-0 bg-grid-lines pointer-events-none opacity-60"
         style={{ backgroundSize: '56px 56px' }}

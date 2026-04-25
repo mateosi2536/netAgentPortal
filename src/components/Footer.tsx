@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative border-t border-border-soft bg-bg">
+    <footer className="relative border-t border-border-soft bg-bg overflow-hidden">
       {/* Big wordmark */}
       <div className="container-pg pt-20 pb-10 relative">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
@@ -93,7 +93,7 @@ function FLink({ href, children }: { href: string; children: React.ReactNode }) 
   return (
     <a
       href={href}
-      className="text-ink-dim hover:text-phosphor transition-colors flex items-center gap-1.5"
+      className="text-ink-dim hover:text-phosphor transition-colors flex items-center gap-1.5 break-all"
     >
       <span className="text-phosphor/0 group-hover:text-phosphor transition-colors">›</span>
       {children}

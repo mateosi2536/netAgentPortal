@@ -17,7 +17,7 @@ export default function SectionHeader({ index, label, title, lede, align = 'left
         <span className="rule-dash w-10" />
         <span className="eyebrow">{label}</span>
       </div>
-      <h2 className="font-display text-display-lg text-ink text-balance">
+      <h2 className="font-display text-display-lg text-ink text-balance break-words">
         {title}
       </h2>
       {lede && (

@@ -60,7 +60,7 @@ const stages: Stage[] = [
 
 export default function Pipeline() {
   return (
-    <section id="pipeline" className="relative py-24 md:py-32 border-t border-border-soft">
+    <section id="pipeline" className="relative py-24 md:py-32 border-t border-border-soft overflow-hidden">
       <div className="container-pg relative">
         <SectionHeader
           index="03"
