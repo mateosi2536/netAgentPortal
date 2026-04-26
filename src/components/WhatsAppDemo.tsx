@@ -325,7 +325,20 @@ function MessageBubble({ msg }: { msg: Msg }) {
           {msg.time}
           {isUser && (
             <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-              <path d="M1 5l3 3 4-6M6 8l3 0M8 5l3-3" stroke="#6ab7ff" strokeWidth="1" />
+              <path
+                d="M1 5.2 L4 8 L8.5 1.8"
+                stroke="#6ab7ff"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M5 5.2 L8 8 L12.5 1.8"
+                stroke="#6ab7ff"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           )}
         </div>

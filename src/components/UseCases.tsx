@@ -91,11 +91,20 @@ function ChatBubble({ b }: { b: Bubble }) {
         >
           {b.time}
           {isUser && (
-            <svg width="12" height="9" viewBox="0 0 14 10" fill="none">
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
               <path
-                d="M1 5l3 3 4-6M6 8l3 0M8 5l3-3"
+                d="M1 5.2 L4 8 L8.5 1.8"
                 stroke="#6ab7ff"
-                strokeWidth="1"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M5 5.2 L8 8 L12.5 1.8"
+                stroke="#6ab7ff"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           )}
@@ -149,40 +158,63 @@ function ChatFrame({
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const [step, setStep] = useState(0)
+  // Each entry carries its source-index in `items` plus a unique key so the
+  // same item can be added/removed and added again without React reuse issues.
+  const [visible, setVisible] = useState<
+    { key: string; idx: number }[]
+  >([])
 
   useEffect(() => {
     if (!inView) return
     let cancelled = false
     let i = 0
-    const tick = () => {
-      if (cancelled || i >= items.length) return
-      setStep(i + 1)
-      const dwell =
-        items[i].dwell ?? (items[i].kind === 'typing' ? 950 : 850)
-      i += 1
-      setTimeout(tick, dwell)
+    let uid = 0
+    const sleep = (ms: number) =>
+      new Promise<void>((res) => setTimeout(res, ms))
+
+    const run = async () => {
+      await sleep(400)
+      while (!cancelled && i < items.length) {
+        const item = items[i]
+        const myIdx = i
+        const key = `i-${myIdx}-${uid++}`
+
+        // 1) mount the item
+        setVisible((prev) => [...prev, { key, idx: myIdx }])
+
+        // 2) dwell while visible
+        const dwell =
+          item.dwell ?? (item.kind === 'typing' ? 1000 : 850)
+        await sleep(dwell)
+        if (cancelled) return
+
+        // 3) if it's a typing indicator, remove it BEFORE the next item
+        //    appears, then wait for the exit animation to complete so the
+        //    container doesn't bounce.
+        if (item.kind === 'typing') {
+          setVisible((prev) => prev.filter((v) => v.key !== key))
+          await sleep(280)
+          if (cancelled) return
+        }
+
+        i++
+      }
     }
-    const start = setTimeout(tick, 350)
+
+    run()
     return () => {
       cancelled = true
-      clearTimeout(start)
     }
   }, [inView, items])
-
-  // Slice up to current step. Drop typing items that are no longer the last
-  // visible item — that's what makes "escribiendo…" disappear when the next
-  // message lands.
-  const visible = items.slice(0, step).filter((item, idx, arr) => {
-    if (item.kind !== 'typing') return true
-    return idx === arr.length - 1
-  })
 
   return (
     <div ref={ref} className="card tick-corner overflow-hidden">
       {header}
+      {/* Fixed-height stage anchored to bottom — new messages push older ones
+          up, exactly like a real WhatsApp scroll. Overflow is clipped so the
+          container itself never grows. */}
       <div
-        className="bg-bg/80 px-3 py-4 space-y-2.5 min-h-[280px]"
+        className="bg-bg/80 px-3 py-4 h-[360px] sm:h-[400px] flex flex-col justify-end gap-2.5 overflow-hidden"
         style={{
           backgroundImage:
             'radial-gradient(rgba(159,239,0,0.04) 1px, transparent 1px)',
@@ -190,13 +222,14 @@ function ChatFrame({
         }}
       >
         <AnimatePresence initial={false}>
-          {visible.map((item, idx) =>
-            item.kind === 'typing' ? (
-              <TypingDots key={`typing-${idx}`} />
+          {visible.map((v) => {
+            const item = items[v.idx]
+            return item.kind === 'typing' ? (
+              <TypingDots key={v.key} />
             ) : (
-              <ChatBubble key={`msg-${idx}`} b={item.bubble} />
+              <ChatBubble key={v.key} b={item.bubble} />
             )
-          )}
+          })}
         </AnimatePresence>
       </div>
       {hint && (
@@ -505,12 +538,7 @@ function QAViewer() {
     { kind: 'typing', dwell: 850 },
     {
       kind: 'msg',
-      bubble: {
-        who: 'agent',
-        text: 'bridge · 10.10.5.1/24',
-        footer: 'workspace/topology/nodo-5.md · línea 14',
-        time: '09:12',
-      },
+      bubble: { who: 'agent', text: 'bridge · 10.10.5.1/24', time: '09:12' },
       dwell: 1100,
     },
     {
@@ -526,7 +554,7 @@ function QAViewer() {
       kind: 'msg',
       bubble: {
         who: 'agent',
-        text: 'Te la mando por mensaje privado en 5s — no la pongo en el grupo.',
+        text: 'Te la mando por privado en 5s — no la pongo en el grupo.',
         time: '09:13',
       },
     },
