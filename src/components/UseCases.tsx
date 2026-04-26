@@ -214,7 +214,7 @@ function ChatFrame({
           up, exactly like a real WhatsApp scroll. Overflow is clipped so the
           container itself never grows. */}
       <div
-        className="bg-bg/80 px-3 py-4 h-[360px] sm:h-[400px] flex flex-col justify-end gap-2.5 overflow-hidden"
+        className="bg-bg/80 px-3 py-4 h-[360px] sm:h-[300px] flex flex-col justify-end gap-2.5 overflow-hidden"
         style={{
           backgroundImage:
             'radial-gradient(rgba(159,239,0,0.04) 1px, transparent 1px)',
@@ -538,7 +538,12 @@ function QAViewer() {
     { kind: 'typing', dwell: 850 },
     {
       kind: 'msg',
-      bubble: { who: 'agent', text: 'bridge · 10.10.5.1/24', time: '09:12' },
+      bubble: {
+        who: 'agent',
+        text:
+          'Nodo 5 · bridge\n\n· IP: 10.10.5.1/24\n· VLAN 200 · gateway 10.10.5.254\n· uplink: ether1 → CORE-01',
+        time: '09:12',
+      },
       dwell: 1100,
     },
     {
