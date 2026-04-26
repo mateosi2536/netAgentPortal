@@ -108,7 +108,7 @@ export default function Hero() {
                 Ver demo en vivo
               </a>
               <span className="ml-1 font-mono text-[11px] text-ink-faint">
-                14 días de garantía
+                7 días de garantía
               </span>
             </motion.div>
 

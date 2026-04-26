@@ -26,7 +26,7 @@ const faqs: QA[] = [
   },
   {
     q: '¿Se puede cancelar la suscripción?',
-    a: 'Sí, en un click desde el panel de cuenta de Lemon Squeezy. Sin preguntas, sin llamadas de retención. Además tienes 14 días de garantía: si no te convence, solicitas el reembolso y Lemon Squeezy lo procesa como Merchant of Record.',
+    a: 'Sí, en un click desde el panel de cuenta de Lemon Squeezy. Sin preguntas, sin llamadas de retención. Además tienes 7 días de garantía: si no te convence, solicitas el reembolso y Lemon Squeezy lo procesa como Merchant of Record.',
   },
   {
     q: '¿Por qué el código del agente está ofuscado?',

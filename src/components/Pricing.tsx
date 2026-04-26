@@ -9,7 +9,7 @@ const included = [
   'Sandbox Docker incluido',
   'Workspace ilimitado · sesiones ilimitadas',
   'Soporte por email · SLA 48h hábiles',
-  'Garantía 14 días — sin preguntas',
+  'Garantía 7 días — sin preguntas',
 ]
 
 const notIncluded = [
