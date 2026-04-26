@@ -31,7 +31,7 @@ export default function Pricing() {
       />
       <div className="container-pg relative">
         <SectionHeader
-          index="06"
+          index="04"
           label="Precio"
           align="center"
           title={

@@ -1,9 +1,7 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import WhatsAppDemo from './components/WhatsAppDemo'
-import Pipeline from './components/Pipeline'
-import Features from './components/Features'
-import Stack from './components/Stack'
+import UseCases from './components/UseCases'
 import Pricing from './components/Pricing'
 import Faq from './components/Faq'
 import Footer from './components/Footer'
@@ -17,9 +15,7 @@ export default function App() {
       <main className="relative">
         <Hero />
         <WhatsAppDemo />
-        <Pipeline />
-        <Features />
-        <Stack />
+        <UseCases />
         <Pricing />
         <Faq />
       </main>

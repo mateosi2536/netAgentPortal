@@ -4,9 +4,7 @@ import { useLatestRelease } from '../hooks/useLatestRelease'
 
 const links = [
   { href: '#demo', label: 'Demo' },
-  { href: '#pipeline', label: 'Pipeline' },
-  { href: '#features', label: 'Features' },
-  { href: '#stack', label: 'Stack' },
+  { href: '#use-cases', label: 'Casos' },
   { href: '#pricing', label: 'Precio' },
   { href: '#faq', label: 'FAQ' },
 ]

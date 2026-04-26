@@ -51,7 +51,7 @@ export default function Faq() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
             <SectionHeader
-              index="07"
+              index="05"
               label="Preguntas"
               title={
                 <>
